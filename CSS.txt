@@ -1,0 +1,560 @@
+_______________________________________________________________________________________________
+# CSS	-->		Cascading style sheets
+-----------------------------------------------------------------------------------------------
+
+-> Ways to apply CSS
+1.inline				2.internally					3.externally
+
+------------------------------------------------------------------------------------------------------
+
+>>> INLINE style
+
+	<body style="backgroundcolor:Black;">
+		<h1 style="color:white"> Heading 1 </h1>
+		
+		<p style="color:white">
+			Cascading Style Sheets (CSS) is a style sheet
+			language used for specifying the presentation and styling of a
+			document written in a markup language such as HTML or XML
+			(including XML dialects such as SVG, MathML or XHTML).
+			CSS is a cornerstone technology of the World Wide Web, 
+			alongside HTML and JavaScript.
+		</p>
+			
+		<pre style="color:white">
+			The name cascading comes from the specified priority
+			scheme to determine which declaration applies if more
+			than one declaration of a property match a particular
+			element. This cascading priority scheme is predictable.
+		</pre>
+	</body>
+	
+------------------------------------------------------------------------------------------------------
+
+>>> Internal style
+
+	<head>
+		<style>
+			body{
+				backgroundcolor:Black;
+			}
+			
+			h1{
+				color:white;
+			}
+			
+			p{
+				color:white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1> Heading 1 </h1>
+		
+		<p>
+			Cascading Style Sheets (CSS) is a style sheet
+			language used for specifying the presentation and styling of a
+			document written in a markup language such as HTML or XML
+			(including XML dialects such as SVG, MathML or XHTML).
+			CSS is a cornerstone technology of the World Wide Web, 
+			alongside HTML and JavaScript.
+		</p>
+			
+		<p>
+			The name cascading comes from the specified priority
+			scheme to determine which declaration applies if more
+			than one declaration of a property match a particular
+			element. This cascading priority scheme is predictable.
+		</p>
+	</body>
+	
+------------------------------------------------------------------------------------------------------
+
+>>> External style
+
+	<head>
+		<link rel="stylesheet" href="style.css"
+	</head>
+	<body>
+		<h1> Heading 1 </h1>
+		
+		<p class="odd">
+			Cascading Style Sheets (CSS) is a style sheet
+			language used for specifying the presentation and styling of a
+			document written in a markup language such as HTML or XML
+			(including XML dialects such as SVG, MathML or XHTML).
+			CSS is a cornerstone technology of the World Wide Web, 
+			alongside HTML and JavaScript.
+		</p>
+			
+		<p id="p1">
+			The name cascading comes from the specified priority
+			scheme to determine which declaration applies if more
+			than one declaration of a property match a particular
+			element. This cascading priority scheme is predictable.
+		</p>
+	</body>
+	
+	#style.css
+		body{
+				backgroundcolor:Black;
+			}
+			
+			h1{
+				color:white;
+			}
+			
+			p{
+				color:white;
+			}
+			#p1{
+				color:red;
+			}
+			.odd{
+				color:white;
+			}
+			
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+-> Colors
+
+>>>Inline : Using style property
+
+	<body style="backgroundcolor:lightgray ;color:lightgreen">
+	
+	</body>
+	
+>>>External: Using link property
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+-> Fonts
+
+	<head>
+		<meta charset="UTF-8>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=divice-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	</head>
+	
+   #style.css
+		@font-face{
+			src: url(location of .ttf file)
+			font-family: name anything;
+		}
+		h1{
+			font-family: name, arial;
+		}
+		p{
+			font-family: "lucida console","courier new";
+			font-size: 1em							<!--1em = 100%-->
+			font-weight: bold
+			font-style: italic
+		}
+		
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->	Borders
+
+	#style.css
+		h1{		<!--border: 4px solid purple;		[single line]-->
+			border-style:  solid / dashed / dotted / double / groove / ridge / inset / outset / none ;
+			border-width: 4px;
+			border-color: purple;
+			border-radius:17px;
+		}
+		p{
+			border-bottom: 3px solid red;
+			border-top: 3px solid black;
+			border-left: 3px dotted black;
+			border-right: 3px dotted red;
+			
+			border-radius: 7px
+		}
+		
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  Shadows
+
+	h1{			<!--hori_offset vert_offset blur shadow_color -->
+		text-shadow: 3px 3px 4px red, -2px -2px 5px cyan ;
+	}
+	#box{		given to div
+		height: --px;
+		width: --px;
+		backgroundcolor: lightgray;
+		box-shadow: [can write same as text-shadow];
+	}
+	
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  Margins
+
+    <div class="box" id="b1">Box1</div>
+	<p class="box" id="b2">Box2</p>
+    <div class="box" id="b3">Box3</div>
+
+	#style.css
+	body{
+		margin:opx ;
+	}
+
+	.box{
+		border:5px solid ;
+		font-size:4em ;
+		height:150px ;
+		width:300px ;
+	}
+
+	#b1{
+		background-color: aliceblue;
+		margin:auto
+	}
+
+	#b2{
+		background-color: aqua;
+	}
+
+	#b3{
+		background-color: burlywood;
+		margin-right:100px ;
+	}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+-> Float
+
+	<img src="location" height="" id="img1">
+	<p> some paras </p>
+	<img src="location" height="" id="img2">
+	<p> more paras </p>
+
+	#style.css
+	#img1{
+		float:left;
+		margin-right:9px;
+	}
+
+	#img2{
+		float:right;
+		margin-left:9px;
+	}
+
+	body{
+		border:3px solid;
+		display: flow-root;		<!--just for that no float element should go outside the box-->
+	}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  Overflow	{Property that sets the desired behavior when the
+				content do not fit in the parent element box(overflows)
+				TYPES:[visible,hidden,clip,scroll,auto]  }
+
+	#style.css
+	div{
+		overflow: [overflow margin,
+		 overflowed hidden,
+		 overflow-clip-margin:3px  <!--to choose how much can overflow-->
+		 scroll bar will be there for overflowed part,
+		 if needed then bar will be shown else no bar would be provided ]
+	}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  display property	{property specifies if/how an elemnet is displayed
+				block-level = start on a new line, take up the full width
+							(h1,div,p,header,footer,form)
+							
+				inline = do not start with new line,takes required place
+						(span,a,img) }
+
+		<pre>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque aliquid voluptas cumque.
+            Facilis quasi beatae exercitationem quis eius, officia quos sint dolorem consequatur?
+            Illo at mollitia illum! Temporibus, nisi perspiciatis!</pre>
+
+	#style.css
+		pre{
+		background-color: aquamarine;
+		display: block;
+		}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  height and width
+
+	#Style.css
+		*{
+			box-sizing: border-box;
+		}
+		
+		.container{
+			background-color:grey;
+			height: 100vh;			[100% in available space]
+		}
+
+		.box{
+			background-color: white;
+			border: 2px;
+			padding: 20px;
+			width: 50%;
+			height:auto;
+			float: left;
+			text-align: center;
+
+			min-height:20%;
+		}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  Position
+
+	relative = positioned relative where it normally is		[]
+	fixed = positioned relative to viewport			[onscreen like ad or banner]
+	absolute = positioned relative to nearest ancestor		[for nested]
+	sticky = positioned based on scroll position	[after fixed scroll point it also gets like fixed]
+	static = default position for an element
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  background image
+
+	#style.css
+		body{
+			background-image:url(location/same folder)
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+-> Psuedo classes
+
+	#style.css
+		a:link{
+			color:cyan;
+		}
+
+		a:hover{
+			color:lightblue;
+			font-size:1.1em;
+		}
+
+		a:active{
+			color:purple;
+			font-size:1.1em;
+		}
+		a:visited{
+			color:grey;
+		}
+		
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+		<div id="greeting" > Hover here
+			<p> hidden item hehe </p>
+		</div>
+
+		#style.css
+			#greeting p{
+				background-color:lightgreen;
+				padding:7px;
+				display:none;
+			}
+
+			#greeting:hover p{
+				display:block;
+			}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  Psuedo elements
+
+	keyword added after a selector that's used to style a specific parts of an element
+			selctor::psuedo-element
+
+	<h2> Hello </h2>
+    <p id="psuedo-elem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste unde ad tempora quo ipsum nemo, delectus repellat blanditiis possimus ea voluptate quidem cumque aliquid aut doloribus eveniet vitae, qui laboriosam.</p>
+
+    <ul id="fruit">
+        <li>Apple</li>
+        <li>BANANA</li>
+    </ul>
+
+	#style.css
+	h2::first-letter{
+		font-size:2em;
+		font-style:italic;
+	}
+
+	#psuedo-elem::first-line{
+		background-color:yellow;
+	}
+
+	#pseudo-elem::selection{
+		color:green;
+		background-color:black;
+	}
+
+	#appe::before{
+		content:"✅"
+	}
+
+	#bena::after{
+		content:"🍌"
+	}
+
+	#fruit::marker{
+		content:"📑"
+		color:black;
+	}
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  pagination
+
+    <div id="pagination">
+        <a href="just to see.html" class="active">1</a>
+        <a href="header&footer.html">2</a>
+        <a href="Favicon.html">3</a>
+    </div>
+
+	#style.css
+		.pagination{
+			text-align: center;
+		}
+
+		.pagination a{
+			color: black;
+			padding: 7px 14px;
+			display: inline-block;
+			text-decoration: none;				[basically to remove underline]
+		}
+
+		.pagination a.active{
+			background-color: greenyellow;
+			font-weight: bold;
+			border: 5px;
+		}
+
+		.pagination a:hover:not(.active){
+			background-color: lightgray;
+			border-radius: 5px;
+		}
+
+	#-> Should save in all href file to excess each page by each page
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  dropdown menus
+
+	<div class="dropdown">
+    	<button>Vehicles</button>
+        <div class="content">
+            <a href="">SCOOTY</a>
+            <a href="">BIKE</a>
+            <a href="">BUS</a>
+            <a href="">METRO</a>
+        </div>
+    </div>
+
+	#style.css
+	.dropdown{
+		display: inline-block;
+	}
+
+	.dropdown button{
+		background-color: black;
+		color: white;
+		padding: 6px 9px;
+		cursor: pointer;
+	}
+
+	.dropdown a{
+		display: block;
+		color: black;
+		background-color: white;
+		padding: 6px 9px;
+	}
+
+	.dropdown .content{
+		display: none;
+		position:absolute;
+		background-color: aliceblue;
+		min-width: 69px;
+		box-shadow: 2px 2px 5px hsl(0,0%,0%,0.8) ;
+	}
+
+	.dropdown:hover button{
+		background-color: lightblue;
+
+	}
+
+	.dropdown:hover a{
+		background-color: antiquewhite;
+	}
+
+	.dropdown:hover .content{
+		display: block;
+	}
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+->  
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------

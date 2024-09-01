@@ -1,0 +1,148 @@
+body{
+    margin:opx ;
+}
+
+.box{
+    border:5px solid ;
+    font-size:4em ;
+    height:150px ;
+    width:300px ;
+}
+
+#b1{
+    background-color: aliceblue;
+    margin:auto
+}
+
+#b2{
+    background-color: aqua;
+}
+
+#b3{
+    background-color: burlywood;
+    margin-right:100px ;
+}
+
+pre{
+    background-color: aquamarine;
+    display: block;
+}
+
+.box{
+    background-color: white;
+    border: 2px;
+    padding: 20px;
+    width: 50%;
+    height:auto;
+    float: left;
+    text-align: center;
+
+    min-height:20%;
+}
+
+body{
+    background-image:url(Others/Favi.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+    background-size: cover;
+}
+
+#greeting p{
+    background-color:lightgreen;
+    padding:7px;
+    display:none;
+}
+
+#greeting:hover p{
+    display:block;
+}
+
+h2::first-letter{
+    font-size:2em;
+    font-style:italic;
+}
+
+#psuedo-elem::first-line{
+    background-color:yellow;
+}
+
+#pseudo-elem::selection{
+    color:green;
+    background-color:black;
+}
+
+#appe::before{
+    content:"✅"
+}
+
+#bena::after{
+    content:"🍌"
+}
+
+#fruit::marker{
+    content:"📑";
+    color: black;
+}
+
+.pagination{
+    text-align: center;
+}
+
+.pagination a{
+    color: black;
+    padding: 7px 14px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pagination a.active{
+    background-color: greenyellow;
+    font-weight: bold;
+    border: 5px;
+}
+
+.pagination a:hover:not(.active){
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.dropdown{
+    display: inline-block;
+}
+
+.dropdown button{
+    background-color: black;
+    color: white;
+    padding: 6px 9px;
+    cursor: pointer;
+}
+
+.dropdown a{
+    display: block;
+    color: black;
+    background-color: white;
+    padding: 6px 9px;
+}
+
+.dropdown .content{
+    display: none;
+    position:absolute;
+    background-color: aliceblue;
+    min-width: 69px;
+    box-shadow: 2px 2px 5px hsl(0,0%,0%,0.8) ;
+}
+
+.dropdown:hover button{
+    background-color: lightblue;
+
+}
+
+.dropdown:hover a{
+    background-color: antiquewhite;
+}
+
+.dropdown:hover .content{
+    display: block;
+}
+
