@@ -523,13 +523,73 @@ ________________________________________________________________________________
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 
-->  
+->  Navigation bar
+
+	<nav class="navbar" style="background-color: gray; color: white; ">
+            <ul style="text-decoration: none;">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Favicon.html">Favicon</a></li>
+                <li><a href="header&footer.html">Header&Footer</a></li>
+            </ul>
+        </nav>
+
+	#style.css			<!--Just for inline alignment and decoration-->
+	.navbar ul{
+		list-style-type: none;
+		margin: 0%;
+		overflow: hidden;
+	}
+
+	.navbar li{
+		float: left;
+	}
+
+	.navbar a{
+		text-decoration: none;
+		display: block;
+		padding: 14px;
+		text-align: center;
+	}
 
 
 ------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 
-->  
+->  Website layout
+
+	<!-- Semantic tags
+
+	<header> = introductory content
+	<nav>	 = navigation bar, link
+	<main>   = main content (section aside article)
+	<section>= depend content
+	<aside>  = side content
+	<article>= independent content
+	<footer> = closing content
+
+	-->
+
+	#style.css
+	aside{
+		width:20%;
+		float:left;
+		padding:9px;
+	}
+	section{
+		width:40%;
+		float:left;
+		padding:9px;
+	}
+	article{
+		width:40%;
+		float:left;
+		padding:9px;
+	}
+	@media screen and (max-width:600px){
+		aside,section,article{
+			width:100%;
+		}
+	}
 
 
 ------------------------------------------------------------------------------------------------------
